@@ -2,7 +2,7 @@ package co.com.udea.calidad.reservas.moduloreservas.stepdefinitions;
 
 import co.com.udea.calidad.reservas.moduloreservas.questions.Validation;
 import co.com.udea.calidad.reservas.moduloreservas.tasks.Find;
-import co.com.udea.calidad.reservas.moduloreservas.tasks.Open;
+import co.com.udea.calidad.reservas.moduloreservas.tasks.OpenThe;
 import co.com.udea.calidad.reservas.moduloreservas.userinterfaces.GoogleSearchPage;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
@@ -23,9 +23,7 @@ import java.time.Duration;
 
 import static co.com.udea.calidad.reservas.moduloreservas.userinterfaces.GoogleSearchPage.UDEA_LINK;
 import static net.serenitybdd.core.Serenity.getDriver;
-import static net.serenitybdd.screenplay.GivenWhenThen.givenThat;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static net.serenitybdd.screenplay.actors.OnStage.setTheStage;
 import static org.hamcrest.Matchers.is;
 
 public class StepDefinition {
@@ -42,7 +40,7 @@ public class StepDefinition {
 
     @Given("I am on the google search page")
     public void iAmOnTheGoogleSearchPage() {
-        user.attemptsTo(Open.browserOn(new GoogleSearchPage()));
+        user.attemptsTo(OpenThe.browserOn(new GoogleSearchPage()));
     }
     @When("I search for {string}")
     public void iSearchFor(String string) {
